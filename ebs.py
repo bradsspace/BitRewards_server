@@ -24,7 +24,7 @@ async def handler(websocket, path):
         clients.remove(websocket)
 
 
-start_server = websockets.serve(handler, "localhost", 8000, ssl=ssl_context)
+start_server = websockets.serve(handler, "0.0.0.0", 8000, ssl=ssl_context)
 
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
